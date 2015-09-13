@@ -41,7 +41,6 @@ class Student {
         $result .= "\tEmail Addresses:\n";
         foreach($this->emails as $which=>$what)
             $result .= "\t\t".$which.': '. $what."\n";
-        //$result .= "\n";
         return '<pre>'.$result.'</pre>';
 } 
 }
