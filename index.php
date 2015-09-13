@@ -7,15 +7,17 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>COMP 4711 Class List</title>
     </head>
     <body>
+        <h1>COMP 4711 Class List</h1>
+        
         <?php
         include('student.php');
 
-        $students = array();
+        $students = array();    // creates students array
         
-        $first = new Student();
+        $first = new Student(); // adds first student
         $first->surname = "Doe";
         $first->first_name = "John";
         $first->add_email('home','john@doe.com');
@@ -25,7 +27,7 @@ and open the template in the editor.
         $first->add_grade(55);
         $students['j123'] = $first;
         
-        $second = new Student();
+        $second = new Student();    // adds second student
         $second->surname = "Einstein";
         $second->first_name = "Albert";
         $second->add_email('home','albert@braniacs.com');
@@ -35,8 +37,19 @@ and open the template in the editor.
         $second->add_grade(80);
         $second->add_grade(50);
         $students['a456'] = $second;
+        
+        $third = new Student();     // adds third student
+        $third->surname = "Tangeman";
+        $third->first_name = "Kevin";
+        $third->add_email('home', 'kevint@kt.ca');
+        $third->add_email('work', 'ktanageman@work.com');
+        $third->add_grade(90);
+        $third->add_grade(80);
+        $students['k789'] = $third;
 
-        foreach($students as $student)
+        ksort($students);   // one of the many sort functions 
+        
+        foreach($students as $student)  // displays each student in the array
             echo $student->toString();
 
         ?>
